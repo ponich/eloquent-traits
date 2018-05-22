@@ -1,0 +1,56 @@
+{
+  "name": "ponich/eloquent-traits",
+  "description": "Traits for laravel eloquent models",
+  "version": "1.0.0",
+  "keywords": [
+    "laravel",
+    "eloquent",
+    "activities",
+    "attributes",
+    "attachments"
+  ],
+  "homepage": "https://github.com/ponich/eloquent-traits",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nikolay Ponich",
+      "email": "n.ponich@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "illuminate/support": "5.5.*|5.6.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~7.0",
+    "orchestra/testbench": "~3.3.0|~3.4.2|^3.5.0",
+    "mockery/mockery": "~1.0",
+    "laravel/framework": "5.5.*|5.6.*"
+  },
+  "suggest": {
+    "ext-pdo_sqlite": "For SQLite database"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ponich\\Eloquent\\Traits\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Ponich\\Eloquent\\Traits\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": [
+      "phpunit --testdox"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Ponich\\Eloquent\\Traits\\ServiceProvider"
+      ]
+    }
+  }
+}
