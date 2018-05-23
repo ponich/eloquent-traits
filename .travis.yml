@@ -1,0 +1,14 @@
+language: php
+
+php:
+  - 7.1
+  - 7.2
+
+script:
+  - composer install
+  - composer test
+
+# Cache package sources
+cache:
+  directories:
+    - $HOME/.composer/cache

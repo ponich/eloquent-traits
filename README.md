@@ -1,5 +1,6 @@
 # Traits for Eloquent Models
 
+[![Build Status](https://travis-ci.org/ponich/eloquent-traits.svg?branch=master)](https://travis-ci.org/ponich/eloquent-traits)
 [![Packagist License](https://poser.pugx.org/ponich/eloquent-traits/license.png)](http://choosealicense.com/licenses/mit/)
 [![Latest Stable Version](https://poser.pugx.org/ponich/eloquent-traits/version.png)](https://packagist.org/packages/ponich/eloquent-traits)
 [![Total Downloads](https://poser.pugx.org/ponich/eloquent-traits/d/total.png)](https://packagist.org/packages/ponich/eloquent-traits)
