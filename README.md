@@ -26,7 +26,7 @@ php artisan vendor:publish --provider="Ponich\Eloquent\Traits\ServiceProvider" -
 After the migration has been published you can create tables by running the migrations:
 
 
-``php artisan migration``
+``php artisan migrate``
 
 ### Traits
 
