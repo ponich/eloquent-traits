@@ -23,6 +23,4 @@ class Post extends Model
     {
         return 'sample attribute';
     }
-
-
 }

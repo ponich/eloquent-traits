@@ -45,5 +45,4 @@ class VirtualAttributeModel extends Model
 
         return ($value) ? unserialize($value) : null;
     }
-
 }
