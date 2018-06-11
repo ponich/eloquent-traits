@@ -1,13 +1,17 @@
 # Traits for Eloquent Models
 
 [![Build Status](https://travis-ci.org/ponich/eloquent-traits.svg?branch=master)](https://travis-ci.org/ponich/eloquent-traits)
-[![Packagist License](https://poser.pugx.org/ponich/eloquent-traits/license.png)](http://choosealicense.com/licenses/mit/)
-[![Latest Stable Version](https://poser.pugx.org/ponich/eloquent-traits/version.png)](https://packagist.org/packages/ponich/eloquent-traits)
-[![Total Downloads](https://poser.pugx.org/ponich/eloquent-traits/d/total.png)](https://packagist.org/packages/ponich/eloquent-traits)
+[![License](https://poser.pugx.org/ponich/eloquent-traits/license)](https://packagist.org/packages/ponich/eloquent-traits)
+[![Latest Stable Version](https://poser.pugx.org/ponich/eloquent-traits/v/stable)](https://packagist.org/packages/ponich/eloquent-traits)
+[![Total Downloads](https://poser.pugx.org/ponich/eloquent-traits/downloads)](https://packagist.org/packages/ponich/eloquent-traits)
 
 This package adds the ability to use traits in you Laravel Eloquent Models
 
-> [The traits list below](#traits)
+**[Traits list](#traits)**
+
+ - [Virtual Attributes ](#virtual-attributes)
+ - [Attachments](#attachments)
+
 
 ### Installation
 
@@ -35,7 +39,7 @@ After the migration has been published you can create tables by running the migr
 
 Adds the ability to create virtual attributes in your model.
 
-For use, use trait: ``\Ponich\Eloquent\Traits\VirtualAttribute``
+Use trait: [``\Ponich\Eloquent\Traits\VirtualAttribute``](src/VirtualAttribute.php)
 
 **Example:**
 
@@ -81,4 +85,43 @@ var_dump($post->tags);
     }
 */
 ```
+#### Attachments
 
+Allows links files to models
+
+Use trait: [``\Ponich\Eloquent\Traits\HasAttachment``](src/HasAttachment.php)
+
+**Example:**
+
+**Model:** 
+
+```php
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Post extends Model
+{
+    use \Ponich\Eloquent\Traits\HasAttachment;
+
+    protected $table = 'posts';
+
+    protected $guarded = ['id'];
+}
+```
+
+**Add attachment :**
+
+```php
+$post = Post::findOrFail(1);
+
+// by path
+$post->attach('/path/to/file');
+
+// by request
+$post->attach(
+    $request->file('photo')
+);
+```

@@ -4,10 +4,11 @@ namespace Ponich\Eloquent\Traits\Tests\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Ponich\Eloquent\Traits\VirtualAttribute;
+use Ponich\Eloquent\Traits\HasAttachment;
 
 class Post extends Model
 {
-    use VirtualAttribute;
+    use VirtualAttribute, HasAttachment;
 
     protected $table = 'posts';
 
