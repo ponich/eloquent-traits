@@ -44,7 +44,7 @@ trait HasAttachment
         $attach->model_id = array_get($this, $this->primaryKey);
         $attach->md5 = md5($file->getPathname() . time());
         $attach->disk = $disk;
-        $attach->path = 'attachments/' . $attach->md5 . ".{$file->getExtension()}";
+        $attach->path = 'attachments/' . $attach->md5 . ".{$file->getClientOriginalExtension()}";
         $attach->name = $file->getClientOriginalName();
         $attach->type = $file->getMimeType();
         $attach->size = $file->getSize();
