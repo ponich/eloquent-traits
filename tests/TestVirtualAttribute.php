@@ -147,4 +147,27 @@ class TestVirtualAttribute extends TestCase
             serialize($this->post->tags)
         );
     }
+
+
+    /**
+     * Check change attribute with use 'fill' model method
+     *
+     * @return void
+     */
+    public function testChangeAttributeUseFillMethod()
+    {
+        // set value
+        $this->post->tags = 'value1';
+        $this->post->save();
+
+        // change value
+        $this->post->fill([
+            'tags' => $newValue = 'value2'
+        ]);
+
+        $this->post->save();
+
+        // equals
+        $this->assertEquals($this->post->tags, $newValue);
+    }
 }

@@ -96,7 +96,7 @@ trait VirtualAttribute
 
         foreach ($vattrs as $vattr) {
             if (array_key_exists($vattr, $this->attributes)) {
-                $virtalAttributes[$vattr] = array_get($this, $vattr);
+                $virtalAttributes[$vattr] = array_get($this->attributes, $vattr);
                 unset($this->{$vattr});
             }
         }
@@ -135,7 +135,7 @@ trait VirtualAttribute
             ];
 
             VirtualAttributeModel::updateOrCreate(
-                array_except($data, ['value']),
+                array_except($data, ['value','type']),
                 $data
             );
 
